@@ -249,7 +249,6 @@ func streamLogs(r io.Reader, w io.Writer) (int, error) {
 	// checkpointing the rayID.
 	for scanner.Scan() {
 		w.Write(scanner.Bytes())
-		w.Write([]byte("\n"))
 		count++
 	}
 
